@@ -1,5 +1,18 @@
 # Frequently Asked Questions (FAQ)
 
+## How do I get X Printer to work on Windows?
+
+Initially we need to make sure Windows has the drivers for the printer. Most thermal printers work with the EPSON drivers which can be found here [Epson-Biz Driver Page](https://download.epson-biz.com/modules/pos/index.php?page=genre&pcat=3)
+
+1. Download and install drivers
+2. If printer is not listed in COM1 or COM2, download and setup the **Virtual Port Driver** from the same link above.
+3. Install, Share and Name printer via the "Devices and Printers"
+4. Use the ff connector:
+
+`$printerName = "myprintersnewname";
+use Mike42\Escpos\PrintConnectors\WindowsPrintConnector;
+$connector = new WindowsPrintConnector($printerName);`
+
 ## Can I print to File Format X with this?
 
 If you are trying to generate XPS, PDF or DOCX or HTML files from PHP, then you are most likely in the wrong place.
